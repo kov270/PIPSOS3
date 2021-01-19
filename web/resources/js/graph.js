@@ -114,7 +114,7 @@ function clickCanvas() {
     };
     $.ajax({
         type: "POST",
-        url: "/Laboratory3/" + "async",
+        url: "/unnamed/" + "async",
         data: data,
         success: function (data) {
 

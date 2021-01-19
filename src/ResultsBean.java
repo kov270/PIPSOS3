@@ -10,9 +10,24 @@ public class ResultsBean {
 
     public List<Point> getPoints() {
         Database.em.getTransaction().begin();
-        List<Point> list = Database.em.createQuery("SELECT c FROM Point c", Point.class).getResultList();
+        this.points = Database.em.createQuery("SELECT c FROM Point c", Point.class).getResultList();
         Database.em.getTransaction().commit();
-        return list;
+        return this.points;
     }
 
+    public List<Point> filteredPoints;
+
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
+
+    public List<Point> points;
+
+    public List<Point> getFilteredPoints() {
+        return filteredPoints;
+    }
+
+    public void setFilteredPoints(List<Point> filteredPoints) {
+        this.filteredPoints = filteredPoints;
+    }
 }
